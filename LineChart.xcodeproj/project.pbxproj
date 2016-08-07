@@ -13,6 +13,8 @@
 		19FE7FD01D5705D80091ECA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19FE7FCE1D5705D80091ECA9 /* Main.storyboard */; };
 		19FE7FD21D5705D80091ECA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19FE7FD11D5705D80091ECA9 /* Assets.xcassets */; };
 		19FE7FD51D5705D80091ECA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19FE7FD31D5705D80091ECA9 /* LaunchScreen.storyboard */; };
+		19FE7FDE1D5708710091ECA9 /* GBLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FE7FDD1D5708710091ECA9 /* GBLine.m */; };
+		19FE7FE11D570A9E0091ECA9 /* GBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FE7FE01D570A9E0091ECA9 /* GBChartView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		19FE7FD11D5705D80091ECA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19FE7FD41D5705D80091ECA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19FE7FD61D5705D80091ECA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19FE7FDC1D5708710091ECA9 /* GBLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBLine.h; sourceTree = "<group>"; };
+		19FE7FDD1D5708710091ECA9 /* GBLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBLine.m; sourceTree = "<group>"; };
+		19FE7FDF1D570A9E0091ECA9 /* GBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBChartView.h; sourceTree = "<group>"; };
+		19FE7FE01D570A9E0091ECA9 /* GBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBChartView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,10 @@
 				19FE7FD31D5705D80091ECA9 /* LaunchScreen.storyboard */,
 				19FE7FD61D5705D80091ECA9 /* Info.plist */,
 				19FE7FC51D5705D80091ECA9 /* Supporting Files */,
+				19FE7FDC1D5708710091ECA9 /* GBLine.h */,
+				19FE7FDD1D5708710091ECA9 /* GBLine.m */,
+				19FE7FDF1D570A9E0091ECA9 /* GBChartView.h */,
+				19FE7FE01D570A9E0091ECA9 /* GBChartView.m */,
 			);
 			path = LineChart;
 			sourceTree = "<group>";
@@ -110,6 +120,7 @@
 				TargetAttributes = {
 					19FE7FC11D5705D80091ECA9 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 93B3E338LV;
 					};
 				};
 			};
@@ -149,9 +160,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19FE7FDE1D5708710091ECA9 /* GBLine.m in Sources */,
 				19FE7FCD1D5705D80091ECA9 /* ViewController.m in Sources */,
 				19FE7FCA1D5705D80091ECA9 /* AppDelegate.m in Sources */,
 				19FE7FC71D5705D80091ECA9 /* main.m in Sources */,
+				19FE7FE11D570A9E0091ECA9 /* GBChartView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +278,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = LineChart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yy.LineChart;
@@ -276,6 +290,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = LineChart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yy.LineChart;

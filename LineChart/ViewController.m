@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "GBChartView.h"
 @interface ViewController ()
 
 @end
@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    GBChartView *view = [[GBChartView alloc]initWithFrame:CGRectMake(10, 20, 300, 200)];
+    [self.view addSubview:view];
 }
 
 - (void)didReceiveMemoryWarning {
