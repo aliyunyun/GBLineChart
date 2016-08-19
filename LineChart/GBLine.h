@@ -24,6 +24,7 @@
                     topYspace:(float)topYspace
                   rightXspace:(float)rightXspace
                  bottomYspace:(float)bottomYspace
+                    lineSpace:(float)LineSpace
 ;            //point title
 
 

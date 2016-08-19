@@ -31,6 +31,8 @@
 @property (nonatomic, assign) float startYspace;
 @property (nonatomic, assign) float endXspace;
 @property (nonatomic, assign) float endYspace;
+
+@property (nonatomic, assign) float lineSpace;
 @end
 
 @implementation GBLine
@@ -49,6 +51,7 @@
                     topYspace:(float)topYspace
                   rightXspace:(float)rightXspace
                  bottomYspace:(float)bottomYspace
+                    lineSpace:(float)LineSpace
 {
     self = [super initWithFrame:frame];
     if (self)
@@ -76,6 +79,7 @@
         _endYspace   = bottomYspace;
         
 
+        _lineSpace = LineSpace;
         _coordinatePointsArr = [[NSMutableArray alloc] init];
         
         [self calculateValue];
@@ -91,7 +95,7 @@
     NSAssert(_yTitles.count == _originalDataArr.count, @"title and point must equal");
     CGRect frame = self.frame;
     NSUInteger count = _yTitles.count;
-    float Xspace = (frame.size.width - _startXspace - _endXspace)/(count -1);
+    float Xspace = _lineSpace;
     
     float DrawYHeight = frame.size.height - _startYspace - _endYspace;
     
@@ -99,21 +103,30 @@
     for (int i = 0; i < count; i++) {
         NSNumber *YValue = _originalDataArr[i];
         float Ypoint = 0;
-        if (YValue.floatValue < _maxValue.floatValue && YValue.floatValue > _minValue.floatValue) {
+        if (YValue.floatValue <= _maxValue.floatValue && YValue.floatValue >= _minValue.floatValue) {
             Ypoint = YValue.floatValue/(_maxValue.floatValue - _minValue.floatValue)*DrawYHeight;
-        }else if(YValue.floatValue >= _maxValue.floatValue){
-            Ypoint = DrawYHeight;
+           
+        }else if(YValue.floatValue > _maxValue.floatValue){
+            continue;
+            //Ypoint = DrawYHeight;
+        }else if(YValue.floatValue < _minValue.floatValue){
+            continue;
+            //Ypoint = 0;
         }
         
         CGPoint drawPoint = CGPointMake(_startYspace + Xspace*i, frame.size.height - Ypoint - _startYspace);
         
         CATextLayer *textLayer = [[CATextLayer alloc]init];
-        textLayer.bounds = CGRectMake(0, 0, 30, 20);
-        textLayer.position = CGPointMake(_startYspace + Xspace*i + 5, frame.size.height - Ypoint - _startYspace + 5);
+        textLayer.bounds = CGRectMake(0, 0, 50, 20);
+        float xOffset = 3;
+        float yOffset = 8;
+        textLayer.position = CGPointMake(_startYspace + Xspace*i + xOffset, frame.size.height - Ypoint - _startYspace - yOffset);
         textLayer.anchorPoint = CGPointMake(0, 1);
         textLayer.string = _yTitles[i];
-        textLayer.fontSize = 12.0f;
-        textLayer.foregroundColor = [UIColor blueColor].CGColor;
+        textLayer.fontSize = 13.0f;
+        textLayer.foregroundColor = _pointColor.CGColor;
+        textLayer.rasterizationScale = [UIScreen mainScreen].scale;
+        textLayer.contentsScale = [UIScreen mainScreen].scale;
         [self.layer addSublayer:textLayer];
         
         
@@ -136,6 +149,9 @@
     cirlePath.lineWidth = 4;
     [_lineColor setStroke];
     
+    if (_coordinatePointsArr.count < 1) {
+        return ;
+    }
     
     NSValue *pointValue = _coordinatePointsArr[0];
     CGPoint point = pointValue.CGPointValue;
