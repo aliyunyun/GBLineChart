@@ -7,9 +7,6 @@
 //
 
 #import "GBWeekChartView.h"
-#import "GBBabyLineChart.h"
-#import "HETCurveView.h"
-
 #import "GBChartView.h"
 @interface GBWeekChartView()
 @property (nonatomic, strong) UIScrollView *scrollview;
@@ -34,7 +31,6 @@ const static float LineSpace = 60;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor colorWithHexString:@"fefefe"];
         [self initView];
     }
     return self;
@@ -46,8 +42,8 @@ const static float LineSpace = 60;
     [self addSubview:self.scrollview];
     
     self.numberOfLine = 30;
-    chartView = [[GBChartView alloc]initWithFrame:CGRectMake(0, 0, LineSpace*self.numberOfLine, self.height)];
-    chartView.backgroundColor = [UIColor colorWithHexString:@"fbfbfb"];
+    chartView = [[GBChartView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+    chartView.backgroundColor = [UIColor whiteColor];
     chartView.Xspace = LineSpace;
     [self.scrollview addSubview:chartView];
 }
@@ -60,7 +56,7 @@ const static float LineSpace = 60;
 - (void)setXtitle:(NSArray *)data
 {
     chartView.XtitleArray = data;
-    self.numberOfLine = data.count;
+    self.numberOfLine = (NSInteger)data.count;
     [chartView computeCoordinate];
 }
 
@@ -77,8 +73,9 @@ const static float LineSpace = 60;
     _numberOfLine = numberOfLine;
     float space = 40;
     self.scrollview.contentSize = CGSizeMake(LineSpace*_numberOfLine + space , 0);
-    chartView.frame = CGRectMake(0, 0, LineSpace*_numberOfLine + space, self.height);
-    _scrollview.contentOffset = CGPointMake(LineSpace*_numberOfLine + space - kScreenWidth - LineSpace, 0);
+    chartView.frame = CGRectMake(0, 0, LineSpace*_numberOfLine + space, self.frame.size.height);
+   
+    _scrollview.contentOffset = CGPointMake(LineSpace*_numberOfLine + space -  [UIScreen mainScreen].bounds.size.width - LineSpace, 0);
 }
 
 #pragma mark getter
@@ -86,7 +83,7 @@ const static float LineSpace = 60;
 - (UIScrollView *)scrollview
 {
     if (_scrollview == nil) {
-        _scrollview = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.width, self.height)];
+        _scrollview = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         _scrollview.contentOffset =  CGPointZero;
         _scrollview.bounces = false;
         _scrollview.backgroundColor = [UIColor whiteColor];

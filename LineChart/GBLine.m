@@ -21,7 +21,7 @@
 @property (nonatomic,copy)   NSArray *yTitles;  // 每一个点的titile
 @property (nonatomic,strong) NSNumber *maxValue;  //用于计算
 @property (nonatomic,strong) NSNumber *minValue;
-@property (nonatomic,assign) NSInteger chartType;//图表类型（标识是什么图表）
+@property (nonatomic,assign) GBLineType chartType;//图表类型（标识是什么图表）
 
 
 @property (nonatomic,assign) CGPoint maxPointY;
@@ -43,7 +43,7 @@
                    startColor:(UIColor *)startColor
                      endColor:(UIColor *)endColor
                    pointColor:(UIColor *)pointColor
-                    chartType:(NSInteger)chartType           // now is lineChart
+                    chartType:(GBLineType)chartType           // now is lineChart
                      maxValue:(NSNumber *)maxValue           //maxValue
                      minValue:(NSNumber *)minValue           //minValue
                       yTitles:(NSArray *)yTitles
@@ -104,7 +104,7 @@
         NSNumber *YValue = _originalDataArr[i];
         float Ypoint = 0;
         if (YValue.floatValue <= _maxValue.floatValue && YValue.floatValue >= _minValue.floatValue) {
-            Ypoint = YValue.floatValue/(_maxValue.floatValue - _minValue.floatValue)*DrawYHeight;
+            Ypoint = (YValue.floatValue - _minValue.floatValue)/(_maxValue.floatValue - _minValue.floatValue)*DrawYHeight;
            
         }else if(YValue.floatValue > _maxValue.floatValue){
             continue;
@@ -120,7 +120,11 @@
         textLayer.bounds = CGRectMake(0, 0, 50, 20);
         float xOffset = 3;
         float yOffset = 8;
-        textLayer.position = CGPointMake(_startYspace + Xspace*i + xOffset, frame.size.height - Ypoint - _startYspace - yOffset);
+        float yPosition = frame.size.height - Ypoint - _startYspace - yOffset;
+        if (yPosition) {
+            NSLog(@"xxx %f",yPosition);
+        }
+        textLayer.position = CGPointMake(_startYspace + Xspace*i + xOffset, yPosition);
         textLayer.anchorPoint = CGPointMake(0, 1);
         textLayer.string = _yTitles[i];
         textLayer.fontSize = 13.0f;
@@ -159,15 +163,31 @@
     
     [path1 moveToPoint:CGPointMake(_startYspace, rect.size.height - _startYspace)];
     
-    for (int i = 0; i < _coordinatePointsArr.count; i++) {
-        NSValue *pointValue = _coordinatePointsArr[i];
-        CGPoint point = pointValue.CGPointValue;
-        [path addLineToPoint:point];
-        [path1 addLineToPoint:point];
-        
-        
-        [cirlePath moveToPoint:point];
-        [cirlePath addArcWithCenter:point radius:5 startAngle:0 endAngle:M_PI*2 clockwise:true];
+    CGPoint prePoint = point;
+    if (_chartType == GBLine_Broken_Type) {
+        for (int i = 0; i < _coordinatePointsArr.count; i++) {
+            NSValue *pointValue = _coordinatePointsArr[i];
+            CGPoint point = pointValue.CGPointValue;
+            [path addLineToPoint:point];
+            [path1 addLineToPoint:point];
+            
+            [cirlePath moveToPoint:point];
+            [cirlePath addArcWithCenter:point radius:5 startAngle:0 endAngle:M_PI*2 clockwise:true];
+        }
+    }else if(_chartType == GBLine_Curve_Type){
+        for (int i = 0; i < _coordinatePointsArr.count; i++) {
+            NSValue *pointValue = _coordinatePointsArr[i];
+            CGPoint point = pointValue.CGPointValue;
+            
+            float midX = (point.x + prePoint.x)/2;
+            [path addCurveToPoint:point controlPoint1:CGPointMake(midX, prePoint.y) controlPoint2:CGPointMake(midX, point.y)];
+            [path1 addCurveToPoint:point controlPoint1:CGPointMake(midX, prePoint.y) controlPoint2:CGPointMake(midX, point.y)];
+
+            [cirlePath moveToPoint:point];
+            [cirlePath addArcWithCenter:point radius:5 startAngle:0 endAngle:M_PI*2 clockwise:true];
+            
+            prePoint = point;
+        }
     }
     
     [path1 addLineToPoint:CGPointMake(rect.size.width - _endXspace, rect.size.height - _startYspace)];

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GBChartLineItem.h"
 
 @interface GBLine : UIView
 
@@ -16,7 +17,7 @@
                    startColor:(UIColor *)startColor
                      endColor:(UIColor *)endColor
                    pointColor:(UIColor *)pointColor
-                    chartType:(NSInteger)chartType           // now is lineChart
+                    chartType:(GBLineType)chartType           // now is lineChart
                      maxValue:(NSNumber *)maxValue           //maxValue
                      minValue:(NSNumber *)minValue           //minValue
                       yTitles:(NSArray *)yTitles

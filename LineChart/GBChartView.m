@@ -8,7 +8,8 @@
 
 #import "GBChartView.h"
 #import "GBLine.h"
-
+#import <Masonry/Masonry.h>
+#import "YYKit.h"
 @interface GBChartView()
 @property (nonatomic, strong) UIColor *lineColor;
 
@@ -221,10 +222,11 @@ float endSpaceY = 30;
     return label;
 }
 
+
 - (GBLine *)createLineWithItem:(GBChartLineItem *)item
 {
     NSAssert(item, @"请配置item");
-    GBLine *line =  [[GBLine alloc]initWithFrame:self.bounds data:item.dataArr andLineColor:item.lineColor startColor:[UIColor clearColor] endColor:[UIColor clearColor] pointColor:item.pointColor     chartType:1 maxValue:item.maxValue minValue:item.minValue yTitles:item.yTitles leftXspace:startSpaceX topYspace:startSpaceY rightXspace:endSpaceX bottomYspace:endSpaceY lineSpace:LineSpaceVeritical];
+    GBLine *line =  [[GBLine alloc]initWithFrame:self.bounds data:item.dataArr andLineColor:item.lineColor startColor:[UIColor clearColor] endColor:[UIColor clearColor] pointColor:item.pointColor  chartType:item.lineType maxValue:item.maxValue minValue:item.minValue yTitles:item.yTitles leftXspace:startSpaceX topYspace:startSpaceY rightXspace:endSpaceX bottomYspace:endSpaceY lineSpace:LineSpaceVeritical];
     line.layer.shouldRasterize = true;
     
     return line;

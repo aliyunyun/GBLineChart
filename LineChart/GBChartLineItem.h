@@ -7,6 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+
+typedef NS_ENUM(NSInteger, GBLineType)
+{
+    GBLine_Broken_Type,
+    GBLine_Curve_Type
+};
+
 
 @interface GBChartLineItem : NSObject
 
@@ -19,6 +28,7 @@
 @property (nonatomic, strong) UIColor *lineColor ;
 @property (nonatomic, strong) UIColor *pointColor;
 
+@property (nonatomic, assign) GBLineType  lineType;
 
 
 @end

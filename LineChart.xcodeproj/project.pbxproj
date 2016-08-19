@@ -7,17 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		199C29AD1D66B038001C1E6C /* GBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 199C29A61D66B038001C1E6C /* GBChartView.m */; };
+		199C29AE1D66B038001C1E6C /* GBLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 199C29A81D66B038001C1E6C /* GBLine.m */; };
+		199C29AF1D66B038001C1E6C /* GBWeekChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 199C29AA1D66B038001C1E6C /* GBWeekChartView.m */; };
 		19FE7FC71D5705D80091ECA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FE7FC61D5705D80091ECA9 /* main.m */; };
 		19FE7FCA1D5705D80091ECA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FE7FC91D5705D80091ECA9 /* AppDelegate.m */; };
 		19FE7FCD1D5705D80091ECA9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FE7FCC1D5705D80091ECA9 /* ViewController.m */; };
 		19FE7FD01D5705D80091ECA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19FE7FCE1D5705D80091ECA9 /* Main.storyboard */; };
 		19FE7FD21D5705D80091ECA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19FE7FD11D5705D80091ECA9 /* Assets.xcassets */; };
 		19FE7FD51D5705D80091ECA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19FE7FD31D5705D80091ECA9 /* LaunchScreen.storyboard */; };
-		19FE7FDE1D5708710091ECA9 /* GBLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FE7FDD1D5708710091ECA9 /* GBLine.m */; };
-		19FE7FE11D570A9E0091ECA9 /* GBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FE7FE01D570A9E0091ECA9 /* GBChartView.m */; };
+		4BC0864810EE8AA9F877831C /* libPods-LineChart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D64B8A5DB93CB2C46CF8F14 /* libPods-LineChart.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		199C29A51D66B038001C1E6C /* GBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBChartView.h; sourceTree = "<group>"; };
+		199C29A61D66B038001C1E6C /* GBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBChartView.m; sourceTree = "<group>"; };
+		199C29A71D66B038001C1E6C /* GBLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBLine.h; sourceTree = "<group>"; };
+		199C29A81D66B038001C1E6C /* GBLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBLine.m; sourceTree = "<group>"; };
+		199C29A91D66B038001C1E6C /* GBWeekChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBWeekChartView.h; sourceTree = "<group>"; };
+		199C29AA1D66B038001C1E6C /* GBWeekChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBWeekChartView.m; sourceTree = "<group>"; };
+		199C29AB1D66B038001C1E6C /* GBChartLineItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBChartLineItem.h; sourceTree = "<group>"; };
+		199C29AC1D66B038001C1E6C /* GBChartLineItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBChartLineItem.m; sourceTree = "<group>"; };
 		19FE7FC21D5705D80091ECA9 /* LineChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LineChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19FE7FC61D5705D80091ECA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		19FE7FC81D5705D80091ECA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -28,10 +38,9 @@
 		19FE7FD11D5705D80091ECA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19FE7FD41D5705D80091ECA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19FE7FD61D5705D80091ECA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19FE7FDC1D5708710091ECA9 /* GBLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBLine.h; sourceTree = "<group>"; };
-		19FE7FDD1D5708710091ECA9 /* GBLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBLine.m; sourceTree = "<group>"; };
-		19FE7FDF1D570A9E0091ECA9 /* GBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBChartView.h; sourceTree = "<group>"; };
-		19FE7FE01D570A9E0091ECA9 /* GBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBChartView.m; sourceTree = "<group>"; };
+		3F3D4F0CEE8ACD6DD2F44710 /* Pods-LineChart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LineChart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LineChart/Pods-LineChart.debug.xcconfig"; sourceTree = "<group>"; };
+		53BCE66941F8376A914545F9 /* Pods-LineChart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LineChart.release.xcconfig"; path = "Pods/Target Support Files/Pods-LineChart/Pods-LineChart.release.xcconfig"; sourceTree = "<group>"; };
+		8D64B8A5DB93CB2C46CF8F14 /* libPods-LineChart.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LineChart.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +48,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BC0864810EE8AA9F877831C /* libPods-LineChart.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BACEB5E8A9EC267E04EDAC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F3D4F0CEE8ACD6DD2F44710 /* Pods-LineChart.debug.xcconfig */,
+				53BCE66941F8376A914545F9 /* Pods-LineChart.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		19FE7FB91D5705D80091ECA9 = {
 			isa = PBXGroup;
 			children = (
 				19FE7FC41D5705D80091ECA9 /* LineChart */,
 				19FE7FC31D5705D80091ECA9 /* Products */,
+				0BACEB5E8A9EC267E04EDAC2 /* Pods */,
+				DC39B81AF7792343811519C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +85,14 @@
 		19FE7FC41D5705D80091ECA9 /* LineChart */ = {
 			isa = PBXGroup;
 			children = (
+				199C29A51D66B038001C1E6C /* GBChartView.h */,
+				199C29A61D66B038001C1E6C /* GBChartView.m */,
+				199C29A71D66B038001C1E6C /* GBLine.h */,
+				199C29A81D66B038001C1E6C /* GBLine.m */,
+				199C29A91D66B038001C1E6C /* GBWeekChartView.h */,
+				199C29AA1D66B038001C1E6C /* GBWeekChartView.m */,
+				199C29AB1D66B038001C1E6C /* GBChartLineItem.h */,
+				199C29AC1D66B038001C1E6C /* GBChartLineItem.m */,
 				19FE7FC81D5705D80091ECA9 /* AppDelegate.h */,
 				19FE7FC91D5705D80091ECA9 /* AppDelegate.m */,
 				19FE7FCB1D5705D80091ECA9 /* ViewController.h */,
@@ -73,10 +102,6 @@
 				19FE7FD31D5705D80091ECA9 /* LaunchScreen.storyboard */,
 				19FE7FD61D5705D80091ECA9 /* Info.plist */,
 				19FE7FC51D5705D80091ECA9 /* Supporting Files */,
-				19FE7FDC1D5708710091ECA9 /* GBLine.h */,
-				19FE7FDD1D5708710091ECA9 /* GBLine.m */,
-				19FE7FDF1D570A9E0091ECA9 /* GBChartView.h */,
-				19FE7FE01D570A9E0091ECA9 /* GBChartView.m */,
 			);
 			path = LineChart;
 			sourceTree = "<group>";
@@ -89,6 +114,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DC39B81AF7792343811519C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D64B8A5DB93CB2C46CF8F14 /* libPods-LineChart.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,9 +129,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19FE7FD91D5705D80091ECA9 /* Build configuration list for PBXNativeTarget "LineChart" */;
 			buildPhases = (
+				0F767450E6DD72C760EFF344 /* [CP] Check Pods Manifest.lock */,
 				19FE7FBE1D5705D80091ECA9 /* Sources */,
 				19FE7FBF1D5705D80091ECA9 /* Frameworks */,
 				19FE7FC01D5705D80091ECA9 /* Resources */,
+				6ABD5E4CEAAA0255043EA524 /* [CP] Embed Pods Frameworks */,
+				529BF22B58F27088E851FADB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -155,16 +191,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F767450E6DD72C760EFF344 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		529BF22B58F27088E851FADB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LineChart/Pods-LineChart-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6ABD5E4CEAAA0255043EA524 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LineChart/Pods-LineChart-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		19FE7FBE1D5705D80091ECA9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19FE7FDE1D5708710091ECA9 /* GBLine.m in Sources */,
 				19FE7FCD1D5705D80091ECA9 /* ViewController.m in Sources */,
 				19FE7FCA1D5705D80091ECA9 /* AppDelegate.m in Sources */,
+				199C29AF1D66B038001C1E6C /* GBWeekChartView.m in Sources */,
+				199C29AD1D66B038001C1E6C /* GBChartView.m in Sources */,
 				19FE7FC71D5705D80091ECA9 /* main.m in Sources */,
-				19FE7FE11D570A9E0091ECA9 /* GBChartView.m in Sources */,
+				199C29AE1D66B038001C1E6C /* GBLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +361,7 @@
 		};
 		19FE7FDA1D5705D80091ECA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F3D4F0CEE8ACD6DD2F44710 /* Pods-LineChart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -288,6 +374,7 @@
 		};
 		19FE7FDB1D5705D80091ECA9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53BCE66941F8376A914545F9 /* Pods-LineChart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -317,6 +404,7 @@
 				19FE7FDB1D5705D80091ECA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
